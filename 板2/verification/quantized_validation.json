@@ -1,0 +1,231 @@
+{
+  "candidate": {
+    "character_accuracy": 0.9653846153846154,
+    "accepted_accuracy_with_deployed_threshold": 0.9866167023554604,
+    "accepted_fraction": 0.9579487179487179,
+    "provinces_accuracy": 0.9327956989247311,
+    "thresholds": {
+      "province": 128,
+      "other": 64
+    },
+    "hard_classes": {
+      "浙": {
+        "correct": 56,
+        "total": 60,
+        "accepted": 57,
+        "accepted_correct": 55
+      },
+      "渝": {
+        "correct": 50,
+        "total": 60,
+        "accepted": 46,
+        "accepted_correct": 44
+      },
+      "赣": {
+        "correct": 53,
+        "total": 60,
+        "accepted": 51,
+        "accepted_correct": 47
+      },
+      "湘": {
+        "correct": 58,
+        "total": 60,
+        "accepted": 56,
+        "accepted_correct": 56
+      },
+      "鄂": {
+        "correct": 57,
+        "total": 60,
+        "accepted": 55,
+        "accepted_correct": 54
+      },
+      "贵": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 56,
+        "accepted_correct": 56
+      },
+      "川": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      },
+      "0": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 59,
+        "accepted_correct": 58
+      },
+      "D": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "3": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "S": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 58,
+        "accepted_correct": 58
+      },
+      "6": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "G": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "8": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 59,
+        "accepted_correct": 59
+      },
+      "B": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "1": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      },
+      "Q": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      }
+    }
+  },
+  "baseline": {
+    "character_accuracy": 0.9620512820512821,
+    "accepted_accuracy_with_deployed_threshold": 0.9763282482903735,
+    "accepted_fraction": 0.9748717948717949,
+    "provinces_accuracy": 0.9252688172043011,
+    "thresholds": {
+      "province": 64,
+      "other": 64
+    },
+    "hard_classes": {
+      "浙": {
+        "correct": 55,
+        "total": 60,
+        "accepted": 58,
+        "accepted_correct": 55
+      },
+      "渝": {
+        "correct": 50,
+        "total": 60,
+        "accepted": 52,
+        "accepted_correct": 45
+      },
+      "赣": {
+        "correct": 56,
+        "total": 60,
+        "accepted": 57,
+        "accepted_correct": 55
+      },
+      "湘": {
+        "correct": 57,
+        "total": 60,
+        "accepted": 57,
+        "accepted_correct": 56
+      },
+      "鄂": {
+        "correct": 58,
+        "total": 60,
+        "accepted": 57,
+        "accepted_correct": 55
+      },
+      "贵": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 57,
+        "accepted_correct": 57
+      },
+      "川": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      },
+      "0": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      },
+      "D": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "3": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "S": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 59,
+        "accepted_correct": 59
+      },
+      "6": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "G": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 59,
+        "accepted_correct": 59
+      },
+      "8": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "B": {
+        "correct": 60,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 60
+      },
+      "1": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      },
+      "Q": {
+        "correct": 59,
+        "total": 60,
+        "accepted": 60,
+        "accepted_correct": 59
+      }
+    }
+  },
+  "scope": "4020 synthetic held-out-font-file glyphs; 3900 ordinary-blue-plate eligible labels. NOT real camera accuracy."
+}

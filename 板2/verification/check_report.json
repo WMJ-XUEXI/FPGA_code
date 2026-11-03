@@ -1,0 +1,9 @@
+{
+  "TD_sources": 64,
+  "plaintext_RTL": 46,
+  "errors": 0,
+  "official_video_files_unchanged": 196,
+  "camera": "SC520CS",
+  "CNN_enabled": true,
+  "board_test": "pending"
+}

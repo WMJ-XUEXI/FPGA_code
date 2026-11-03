@@ -1,0 +1,55 @@
+{
+  "scope": "synthetic printed glyphs, held-out font FILES and random seed; not real camera accuracy",
+  "before": {
+    "character_accuracy": 0.962051272392273,
+    "accepted_accuracy_margin32": 0.9686203598976135,
+    "accepted_fraction": 0.9887179732322693,
+    "province_accuracy": 0.925268828868866,
+    "chuan_accuracy": 0.9833333492279053,
+    "yu_accuracy": 0.8333333134651184,
+    "zhe_accuracy": 0.9166666865348816,
+    "G_accuracy": 0.9833333492279053,
+    "six_accuracy": 1.0
+  },
+  "after": {
+    "character_accuracy": 0.9653846025466919,
+    "accepted_accuracy_margin32": 0.9714656472206116,
+    "accepted_fraction": 0.9884615540504456,
+    "province_accuracy": 0.9327957034111023,
+    "chuan_accuracy": 0.9833333492279053,
+    "yu_accuracy": 0.8333333134651184,
+    "zhe_accuracy": 0.9333333373069763,
+    "G_accuracy": 1.0,
+    "six_accuracy": 1.0
+  },
+  "best_epoch": 10,
+  "train_samples": 33000,
+  "validation_samples": 4020,
+  "train_fonts_CN": [
+    "simhei.ttf",
+    "simsun.ttc",
+    "msyh.ttc",
+    "simfang.ttf"
+  ],
+  "train_fonts_EN": [
+    "arialbd.ttf",
+    "ARIALN.TTF",
+    "bahnschrift.ttf",
+    "simhei.ttf",
+    "msyh.ttc"
+  ],
+  "validation_fonts_CN": [
+    "simkai.ttf",
+    "msyhbd.ttc"
+  ],
+  "validation_fonts_EN": [
+    "arial.ttf",
+    "ARIALNB.TTF",
+    "msyhbd.ttc"
+  ],
+  "photographed_development_samples_in_training": 0,
+  "network_dimensions_unchanged": true,
+  "hidden_units": 48,
+  "epochs": 12,
+  "elapsed_seconds": 58.04156994819641
+}

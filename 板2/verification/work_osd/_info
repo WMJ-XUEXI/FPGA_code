@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vrecognition_osd
+Z1 !s110 1793376278
+!i10b 1
+!s100 j27oJ2>zNEjeebQi_^=Y01
+I_Ii3D2l0@Qh<0Hz0VD5f62
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1793374821
+8../rtl/recognition_osd.v
+F../rtl/recognition_osd.v
+L0 2
+Z4 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z5 !s108 1793376278.639000
+Z6 !s107 tb_osd.v|../rtl/recognition_osd.v|
+Z7 !s90 -work|work_osd|../rtl/recognition_osd.v|tb_osd.v|
+!i113 1
+Z8 o-work work_osd
+vtb
+R1
+!i10b 1
+!s100 2H:NTBR=R1Z@_1F15QFad1
+Ig6;XnzEOQL=[Q?7_TaJ??0
+R2
+R0
+R3
+8tb_osd.v
+Ftb_osd.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8

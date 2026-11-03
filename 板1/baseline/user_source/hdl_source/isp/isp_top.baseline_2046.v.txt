@@ -1,0 +1,214 @@
+module isp_top (
+    input 			axi4s_video_aclk,
+    input 			I_rst_n			,
+    input 			I_tlast			,
+    input 			I_tuser			,
+    input [39:0] 	I_tdata			,
+    input 			I_tvalid		,
+    input [9:0] 	I_tdest			,
+    input 			O_tready		,
+    output [127:0] 	O_tdata			,
+    output 			O_tlast			,
+    output 			O_tuser			,
+    output 			O_tvalid		,
+    output 			I_tready
+);
+ 
+wire         m_aixs_tvalid;  //synthesis keep 
+  wire [127:0] m_aixs_tdata;  //synthesis keep 
+  wire         m_aixs_tuser;  //synthesis keep 
+  wire         m_aixs_tlast;  //synthesis keep 
+  wire         m_aixs_tready;  //synthesis keep 
+  
+  wire [ 95:0] m_aixs_tdata_96;  //synthesis keep 
+
+
+  wire         awb_O_tlast;  //synthesis keep 
+  wire         awb_O_tuser;  //synthesis keep 
+  wire [ 95:0] awb_O_tdata;  //synthesis keep 
+  wire         awb_O_tvalid;  //synthesis keep 
+  wire         awb_O_tready;  //synthesis keep 
+
+  wire         awb_O_tuser_128;  //synthesis keep 
+  wire         awb_O_tvalid_128;  //synthesis keep 
+  wire [127:0] awb_O_tdata_128;  //synthesis keep 
+
+  assign awb_O_tready = O_tready;
+  assign O_tdata  = awb_O_tdata_128;
+  assign O_tlast  = awb_O_tlast    ;
+  assign O_tuser  = awb_O_tuser_128    ;
+  assign O_tvalid = awb_O_tvalid_128   ;
+  
+  //assign m_aixs_tready = O_tready;
+  //assign O_tdata  = m_aixs_tdata;
+  //assign O_tlast  = m_aixs_tlast    ;
+  //assign O_tuser  = m_aixs_tuser    ;
+  //assign O_tvalid = m_aixs_tvalid   ;
+ 
+ 
+demosaic #(
+    .IMG_HEIGHT          (720 ), // 图像高度
+    .IMG_WIDTH           (1280), // 图像宽度
+    .data_complete_delay (50  ),
+    .BAYER_MODE          ("BGGR")
+)
+u_demosaic
+(
+    .I_clk   			(axi4s_video_aclk)	,   // 时钟信号
+    .I_rst_n 			(I_rst_n)	,   // 复位信号，低有效
+    .axi4s_video_tdata 	(I_tdata)	,  // AXI4-Stream视频数据
+    .axi4s_video_tdest 	(I_tdest)	,
+    .axi4s_video_tlast 	(I_tlast)	,  // 行结束信号
+    .axi4s_video_tvalid	(I_tvalid)	,  // 数据有效信号
+    .axi4s_video_tuser 	(I_tuser)	,  // 帧开始信号
+    .axi4s_video_tready	(I_tready)	,  // 从模块准备好接受数据
+    .O_tlast  			(m_aixs_tlast)	,  // 输出行结束信号
+    .O_tuser  			(m_aixs_tuser)	,  // 输出帧开始信号
+    .O_tdata  			(m_aixs_tdata)	,  // 输出数据
+    .O_tvalid 			(m_aixs_tvalid)	,  // 输出数据有效信号
+    .O_tready   		(m_aixs_tready)	   // 输出数据准备好信号
+);
+ 
+data128_96 u_data128_96 (
+    .I_tdata(m_aixs_tdata),
+    .O_tdata(m_aixs_tdata_96)
+);
+
+awb #(
+    .IMG_HEIGHT(720 ),
+    .IMG_WIDTH (1280)
+) u_awb (
+    .I_clk   (axi4s_video_aclk),
+    .I_rst_n (I_rst_n),
+    .I_tlast (m_aixs_tlast),
+    .I_tuser (m_aixs_tuser),
+    .I_tdata (m_aixs_tdata_96),
+    .I_tvalid(m_aixs_tvalid),
+    .I_tready(m_aixs_tready),
+    .O_tlast (awb_O_tlast ),
+    .O_tuser (awb_O_tuser ),
+    .O_tdata (awb_O_tdata ),
+    .O_tvalid(awb_O_tvalid),
+    .O_tready(awb_O_tready)
+);
+
+  // Conservative black trim (8/255), not a measured sensor black level.
+  localparam [7:0] DISPLAY_BLACK_TRIM = 8'd8;
+  // One Q8 gain per RGB pixel preserves channel ratios after black trim.
+  // Peak tone curve: 7x lift with highlight compression and a shadow toe.
+  function [15:0] display_gain;
+      input [7:0] peak_value;
+      begin
+          case (peak_value)
+            8'd0: display_gain = 16'd0; 8'd1: display_gain = 16'd0; 8'd2: display_gain = 16'd128; 8'd3: display_gain = 16'd171;
+            8'd4: display_gain = 16'd256; 8'd5: display_gain = 16'd308; 8'd6: display_gain = 16'd384; 8'd7: display_gain = 16'd439;
+            8'd8: display_gain = 16'd512; 8'd9: display_gain = 16'd569; 8'd10: display_gain = 16'd615; 8'd11: display_gain = 16'd652;
+            8'd12: display_gain = 16'd704; 8'd13: display_gain = 16'd749; 8'd14: display_gain = 16'd805; 8'd15: display_gain = 16'd837;
+            8'd16: display_gain = 16'd880; 8'd17: display_gain = 16'd919; 8'd18: display_gain = 16'd953; 8'd19: display_gain = 16'd998;
+            8'd20: display_gain = 16'd1037; 8'd21: display_gain = 16'd1061; 8'd22: display_gain = 16'd1094; 8'd23: display_gain = 16'd1136;
+            8'd24: display_gain = 16'd1163; 8'd25: display_gain = 16'd1147; 8'd26: display_gain = 16'd1133; 8'd27: display_gain = 16'd1110;
+            8'd28: display_gain = 16'd1098; 8'd29: display_gain = 16'd1077; 8'd30: display_gain = 16'd1067; 8'd31: display_gain = 16'd1049;
+            8'd32: display_gain = 16'd1040; 8'd33: display_gain = 16'd1024; 8'd34: display_gain = 16'd1009; 8'd35: display_gain = 16'd995;
+            8'd36: display_gain = 16'd982; 8'd37: display_gain = 16'd969; 8'd38: display_gain = 16'd957; 8'd39: display_gain = 16'd946;
+            8'd40: display_gain = 16'd935; 8'd41: display_gain = 16'd925; 8'd42: display_gain = 16'd915; 8'd43: display_gain = 16'd899;
+            8'd44: display_gain = 16'd891; 8'd45: display_gain = 16'd882; 8'd46: display_gain = 16'd869; 8'd47: display_gain = 16'd861;
+            8'd48: display_gain = 16'd854; 8'd49: display_gain = 16'd842; 8'd50: display_gain = 16'd835; 8'd51: display_gain = 16'd824;
+            8'd52: display_gain = 16'd818; 8'd53: display_gain = 16'd807; 8'd54: display_gain = 16'd797; 8'd55: display_gain = 16'd792;
+            8'd56: display_gain = 16'd782; 8'd57: display_gain = 16'd773; 8'd58: display_gain = 16'd768; 8'd59: display_gain = 16'd760;
+            8'd60: display_gain = 16'd751; 8'd61: display_gain = 16'd743; 8'd62: display_gain = 16'd735; 8'd63: display_gain = 16'd728;
+            8'd64: display_gain = 16'd724; 8'd65: display_gain = 16'd717; 8'd66: display_gain = 16'd710; 8'd67: display_gain = 16'd704;
+            8'd68: display_gain = 16'd697; 8'd69: display_gain = 16'd691; 8'd70: display_gain = 16'd684; 8'd71: display_gain = 16'd678;
+            8'd72: display_gain = 16'd672; 8'd73: display_gain = 16'd667; 8'd74: display_gain = 16'd661; 8'd75: display_gain = 16'd656;
+            8'd76: display_gain = 16'd647; 8'd77: display_gain = 16'd642; 8'd78: display_gain = 16'd637; 8'd79: display_gain = 16'd632;
+            8'd80: display_gain = 16'd628; 8'd81: display_gain = 16'd623; 8'd82: display_gain = 16'd619; 8'd83: display_gain = 16'd611;
+            8'd84: display_gain = 16'd607; 8'd85: display_gain = 16'd603; 8'd86: display_gain = 16'd599; 8'd87: display_gain = 16'd592;
+            8'd88: display_gain = 16'd588; 8'd89: display_gain = 16'd584; 8'd90: display_gain = 16'd581; 8'd91: display_gain = 16'd574;
+            8'd92: display_gain = 16'd571; 8'd93: display_gain = 16'd568; 8'd94: display_gain = 16'd562; 8'd95: display_gain = 16'd558;
+            8'd96: display_gain = 16'd555; 8'd97: display_gain = 16'd549; 8'd98: display_gain = 16'd546; 8'd99: display_gain = 16'd544;
+            8'd100: display_gain = 16'd538; 8'd101: display_gain = 16'd535; 8'd102: display_gain = 16'd530; 8'd103: display_gain = 16'd527;
+            8'd104: display_gain = 16'd525; 8'd105: display_gain = 16'd520; 8'd106: display_gain = 16'd517; 8'd107: display_gain = 16'd512;
+            8'd108: display_gain = 16'd510; 8'd109: display_gain = 16'd505; 8'd110: display_gain = 16'd503; 8'd111: display_gain = 16'd501;
+            8'd112: display_gain = 16'd496; 8'd113: display_gain = 16'd494; 8'd114: display_gain = 16'd490; 8'd115: display_gain = 16'd488;
+            8'd116: display_gain = 16'd484; 8'd117: display_gain = 16'd482; 8'd118: display_gain = 16'd478; 8'd119: display_gain = 16'd476;
+            8'd120: display_gain = 16'd472; 8'd121: display_gain = 16'd468; 8'd122: display_gain = 16'd466; 8'd123: display_gain = 16'd463;
+            8'd124: display_gain = 16'd461; 8'd125: display_gain = 16'd457; 8'd126: display_gain = 16'd456; 8'd127: display_gain = 16'd452;
+            8'd128: display_gain = 16'd450; 8'd129: display_gain = 16'd447; 8'd130: display_gain = 16'd444; 8'd131: display_gain = 16'd442;
+            8'd132: display_gain = 16'd439; 8'd133: display_gain = 16'd437; 8'd134: display_gain = 16'd434; 8'd135: display_gain = 16'd431;
+            8'd136: display_gain = 16'd430; 8'd137: display_gain = 16'd427; 8'd138: display_gain = 16'd425; 8'd139: display_gain = 16'd422;
+            8'd140: display_gain = 16'd419; 8'd141: display_gain = 16'd418; 8'd142: display_gain = 16'd415; 8'd143: display_gain = 16'd414;
+            8'd144: display_gain = 16'd411; 8'd145: display_gain = 16'd408; 8'd146: display_gain = 16'd407; 8'd147: display_gain = 16'd405;
+            8'd148: display_gain = 16'd402; 8'd149: display_gain = 16'd401; 8'd150: display_gain = 16'd398; 8'd151: display_gain = 16'd396;
+            8'd152: display_gain = 16'd395; 8'd153: display_gain = 16'd392; 8'd154: display_gain = 16'd389; 8'd155: display_gain = 16'd389;
+            8'd156: display_gain = 16'd386; 8'd157: display_gain = 16'd384; 8'd158: display_gain = 16'd383; 8'd159: display_gain = 16'd380;
+            8'd160: display_gain = 16'd378; 8'd161: display_gain = 16'd376; 8'd162: display_gain = 16'd375; 8'd163: display_gain = 16'd373;
+            8'd164: display_gain = 16'd370; 8'd165: display_gain = 16'd370; 8'd166: display_gain = 16'd368; 8'd167: display_gain = 16'd365;
+            8'd168: display_gain = 16'd363; 8'd169: display_gain = 16'd363; 8'd170: display_gain = 16'd360; 8'd171: display_gain = 16'd358;
+            8'd172: display_gain = 16'd358; 8'd173: display_gain = 16'd356; 8'd174: display_gain = 16'd354; 8'd175: display_gain = 16'd352;
+            8'd176: display_gain = 16'd351; 8'd177: display_gain = 16'd349; 8'd178: display_gain = 16'd347; 8'd179: display_gain = 16'd345;
+            8'd180: display_gain = 16'd345; 8'd181: display_gain = 16'd343; 8'd182: display_gain = 16'd341; 8'd183: display_gain = 16'd339;
+            8'd184: display_gain = 16'd339; 8'd185: display_gain = 16'd337; 8'd186: display_gain = 16'd335; 8'd187: display_gain = 16'd333;
+            8'd188: display_gain = 16'd333; 8'd189: display_gain = 16'd331; 8'd190: display_gain = 16'd329; 8'd191: display_gain = 16'd328;
+            8'd192: display_gain = 16'd326; 8'd193: display_gain = 16'd325; 8'd194: display_gain = 16'd324; 8'd195: display_gain = 16'd322;
+            8'd196: display_gain = 16'd320; 8'd197: display_gain = 16'd320; 8'd198: display_gain = 16'd319; 8'd199: display_gain = 16'd317;
+            8'd200: display_gain = 16'd315; 8'd201: display_gain = 16'd314; 8'd202: display_gain = 16'd314; 8'd203: display_gain = 16'd312;
+            8'd204: display_gain = 16'd310; 8'd205: display_gain = 16'd309; 8'd206: display_gain = 16'd307; 8'd207: display_gain = 16'd307;
+            8'd208: display_gain = 16'd306; 8'd209: display_gain = 16'd304; 8'd210: display_gain = 16'd303; 8'd211: display_gain = 16'd301;
+            8'd212: display_gain = 16'd301; 8'd213: display_gain = 16'd300; 8'd214: display_gain = 16'd298; 8'd215: display_gain = 16'd297;
+            8'd216: display_gain = 16'd296; 8'd217: display_gain = 16'd295; 8'd218: display_gain = 16'd294; 8'd219: display_gain = 16'd293;
+            8'd220: display_gain = 16'd291; 8'd221: display_gain = 16'd290; 8'd222: display_gain = 16'd289; 8'd223: display_gain = 16'd289;
+            8'd224: display_gain = 16'd287; 8'd225: display_gain = 16'd286; 8'd226: display_gain = 16'd285; 8'd227: display_gain = 16'd284;
+            8'd228: display_gain = 16'd283; 8'd229: display_gain = 16'd282; 8'd230: display_gain = 16'd281; 8'd231: display_gain = 16'd280;
+            8'd232: display_gain = 16'd279; 8'd233: display_gain = 16'd277; 8'd234: display_gain = 16'd276; 8'd235: display_gain = 16'd276;
+            8'd236: display_gain = 16'd275; 8'd237: display_gain = 16'd274; 8'd238: display_gain = 16'd273; 8'd239: display_gain = 16'd271;
+            8'd240: display_gain = 16'd270; 8'd241: display_gain = 16'd270; 8'd242: display_gain = 16'd269; 8'd243: display_gain = 16'd268;
+            8'd244: display_gain = 16'd267; 8'd245: display_gain = 16'd266; 8'd246: display_gain = 16'd265; 8'd247: display_gain = 16'd265;
+            8'd248: display_gain = 16'd264; 8'd249: display_gain = 16'd263; 8'd250: display_gain = 16'd262; 8'd251: display_gain = 16'd261;
+            8'd252: display_gain = 16'd260; 8'd253: display_gain = 16'd259; 8'd254: display_gain = 16'd258; 8'd255: display_gain = 16'd256;
+            default: display_gain = 16'd0;
+          endcase
+      end
+  endfunction
+
+  wire [95:0] display_rgb;
+  genvar pixel;
+  generate for (pixel = 0; pixel < 4; pixel = pixel + 1) begin : display_pixels
+      wire [7:0] r_in = awb_O_tdata[pixel*24+16 +: 8];
+      wire [7:0] g_in = awb_O_tdata[pixel*24+8 +: 8];
+      wire [7:0] b_in = awb_O_tdata[pixel*24 +: 8];
+      wire [7:0] r = (r_in > DISPLAY_BLACK_TRIM) ? r_in - DISPLAY_BLACK_TRIM : 8'd0;
+      wire [7:0] g = (g_in > DISPLAY_BLACK_TRIM) ? g_in - DISPLAY_BLACK_TRIM : 8'd0;
+      wire [7:0] b = (b_in > DISPLAY_BLACK_TRIM) ? b_in - DISPLAY_BLACK_TRIM : 8'd0;
+      wire [7:0] rg_peak = (r > g) ? r : g;
+      wire [7:0] peak_value = (rg_peak > b) ? rg_peak : b;
+      wire [15:0] gain = display_gain(peak_value);
+      wire [23:0] r_scaled = r * gain;
+      wire [23:0] g_scaled = g * gain;
+      // Reduce residual yellow/green cast: green trim = 61/64 (-4.6875%).
+      wire [23:0] g_balanced = g_scaled - (g_scaled >> 5) - (g_scaled >> 6);
+      wire [23:0] b_scaled = b * gain;
+      assign display_rgb[pixel*24+16 +: 8] = (|r_scaled[23:16]) ? 8'd255 : r_scaled[15:8];
+      assign display_rgb[pixel*24+8 +: 8] = (|g_balanced[23:16]) ? 8'd255 : g_balanced[15:8];
+      assign display_rgb[pixel*24 +: 8] = (|b_scaled[23:16]) ? 8'd255 : b_scaled[15:8];
+  end endgenerate
+
+    data_96bit_to_128bit u_data_96bit_to_128bit(
+        .I_clk              ( axi4s_video_aclk  ),
+        .I_rst_n            ( I_rst_n           ),
+	
+        .I_96b_frame_start  ( awb_O_tuser	    ),
+        .I_96b_valid        ( awb_O_tvalid 		),
+        .I_96b_data         ( display_rgb		),
+	
+        .O_128b_frame_start ( awb_O_tuser_128  	),
+        .O_128b_valid       ( awb_O_tvalid_128 	),
+        .O_128b_data        ( awb_O_tdata_128  	)
+    );
+
+
+
+//data96_128 u_data96_128 (
+//    .I_tdata(awb_O_tdata),
+//    .O_tdata(awb_O_tdata_128)
+//);
+	
+endmodule

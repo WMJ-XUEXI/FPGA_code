@@ -1,0 +1,350 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vanlogic_logo_rom
+Z1 !s110 1793376275
+!i10b 1
+!s100 LRV@2oD@b[F?YH:`dI8g61
+IzQFJ[`6b>^@MK]Ll^EbIB2
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+w1793014973
+8../user_source/hdl_source/anlogic_logo_rom.v
+F../user_source/hdl_source/anlogic_logo_rom.v
+L0 1
+Z3 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z4 !s108 1793376275.782000
+Z5 !s107 E:/Qian_FPGA/example/cnn/sc520_confusion/rtl/model_config.vh|tb_calendar_integration.v|../user_source/hdl_source/anlogic_logo_rom.v|../rtl/blueplate_video_mixer.v|../rtl/plate_totals.v|../rtl/calendar_clock.v|../rtl/recognition_osd.v|../rtl/parking_records.v|../rtl/plate_confirmation.v|../rtl/plate_capture.v|../rtl/cnn_serial_core.v|../rtl/blue_plate_locator.v|
+Z6 !s90 -work|work_calendar_integration|../rtl/blue_plate_locator.v|../rtl/cnn_serial_core.v|../rtl/plate_capture.v|../rtl/plate_confirmation.v|../rtl/parking_records.v|../rtl/recognition_osd.v|../rtl/calendar_clock.v|../rtl/plate_totals.v|../rtl/blueplate_video_mixer.v|../user_source/hdl_source/anlogic_logo_rom.v|tb_calendar_integration.v|
+!i113 1
+Z7 o-work work_calendar_integration
+vblue_plate_locator
+R1
+!i10b 1
+!s100 FKAZkAOb2g=AU^iN_h5Cc1
+IQHonLP_B5B:>ObnaXd90B2
+R2
+R0
+Z8 w1793374821
+Z9 8../rtl/blue_plate_locator.v
+Z10 F../rtl/blue_plate_locator.v
+L0 47
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vblueplate_features
+R1
+!i10b 1
+!s100 a;cLVh6zj`gBUB^LBXmJ70
+IddfcB^A^Yh_5Poi][Kk]l2
+R2
+R0
+R8
+R9
+R10
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vblueplate_video_mixer
+R1
+!i10b 1
+!s100 IK@XJ^VIV6G6m:QBWG>m<3
+IhYclW:cKi>]WcM9L8h6Tb1
+R2
+R0
+R8
+Z11 8../rtl/blueplate_video_mixer.v
+Z12 F../rtl/blueplate_video_mixer.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vcalendar_clock
+R1
+!i10b 1
+!s100 349oEK6;mC;[bzzfBYH?W3
+I39<n>MVRc4zXmX[Maj=f03
+R2
+R0
+R8
+8../rtl/calendar_clock.v
+F../rtl/calendar_clock.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vcharacter_confidence
+R1
+!i10b 1
+!s100 oYLfXclPdk3DHIBYQKB4V3
+Icha3L<`fO]36E[SoITJ]O3
+R2
+R0
+Z13 w1793376148
+Z14 8../rtl/plate_capture.v
+Z15 F../rtl/plate_capture.v
+L0 486
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vcnn_serial_core
+R1
+!i10b 1
+!s100 9fU2eGJ<IgG2zmP_mR2j11
+I;MLEDX58zm:<f`?10l>aP2
+R2
+R0
+R8
+8../rtl/cnn_serial_core.v
+F../rtl/cnn_serial_core.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vlocator_keys
+R1
+!i10b 1
+!s100 [Zob;e8NK>8VTMPFj:PR`3
+I@C2PK3j`58MB:d?gQMm0k0
+R2
+R0
+R8
+R11
+R12
+L0 106
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vpanel_controls
+R1
+!i10b 1
+!s100 46z]K7JGB;CamMV5<FUUo1
+IR^[4iRX1>E?SO1ZoDA3MD1
+R2
+R0
+R8
+Z16 8../rtl/parking_records.v
+Z17 F../rtl/parking_records.v
+L0 127
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vparking_controls
+R1
+!i10b 1
+!s100 ?OMP>1k3^BPO@A`h^zAXH2
+I_PA2jdOQ2[AmY2F];[6F[0
+R2
+R0
+R8
+R16
+R17
+L0 101
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vparking_records
+R1
+!i10b 1
+!s100 cHjdmoeNPAGijYne2d3IS3
+IOU[Hj3iQd`YV1IUJEI54L3
+R2
+R0
+R8
+R16
+R17
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vplate_capture
+R1
+!i10b 1
+!s100 ZPV;Ac==<9aBlIfk@zaFH1
+ISIOddjVmOLTb09;KZD@>E2
+R2
+R0
+R13
+R14
+R15
+L0 4
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vplate_confirmation
+R1
+!i10b 1
+!s100 9O6FAS`j654RA6X;^V>TE2
+IVo1lh1^h_EmaDBiTm7cd:1
+R2
+R0
+R8
+8../rtl/plate_confirmation.v
+F../rtl/plate_confirmation.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vplate_presence_guard
+R1
+!i10b 1
+!s100 ]Nig_DP^]cljIgi3]PiPP2
+I3Q7U=IgVRAfaC`@hBaT5k3
+R2
+R0
+R8
+R16
+R17
+L0 155
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vplate_totals
+R1
+!i10b 1
+!s100 LM@E^2?J2?aL4PZ`Z8F@`3
+I:f^??n]g?RQz_Gg^_k3B]1
+R2
+R0
+R8
+8../rtl/plate_totals.v
+F../rtl/plate_totals.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vrecognition_osd
+R1
+!i10b 1
+!s100 j27oJ2>zNEjeebQi_^=Y01
+IVX<;GkcF95MomeD?ITh;m0
+R2
+R0
+R8
+8../rtl/recognition_osd.v
+F../rtl/recognition_osd.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+vtb
+R1
+!i10b 1
+!s100 KmcbF4NUC6=iPGSZZ7?741
+In39GoQahjTk^Vf=YaFa_51
+R2
+R0
+R8
+8tb_calendar_integration.v
+Ftb_calendar_integration.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7

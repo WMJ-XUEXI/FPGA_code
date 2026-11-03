@@ -1,0 +1,70 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vcnn_serial_core
+Z1 !s110 1793376224
+!i10b 1
+!s100 9fU2eGJ<IgG2zmP_mR2j11
+I9n>?FndB1f1f9BN@K7WlT1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1793374821
+8../rtl/cnn_serial_core.v
+F../rtl/cnn_serial_core.v
+L0 7
+Z4 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z5 !s108 1793376224.674000
+Z6 !s107 E:/Qian_FPGA/example/cnn/sc520_confusion/rtl/model_config.vh|E:/Qian_FPGA/example/cnn/sc520_panels/rtl/model_config.vh|tb_core_equivalence.v|../rtl/cnn_serial_core.v|cnn_serial_core_baseline.v|
+Z7 !s90 -work|work_core_equivalence|cnn_serial_core_baseline.v|../rtl/cnn_serial_core.v|tb_core_equivalence.v|
+!i113 1
+Z8 o-work work_core_equivalence
+vcnn_serial_core_baseline
+R1
+!i10b 1
+!s100 C0Y79OdF]e[W>e2;aB8771
+Ie4DGBVeV28B`DnMde^TLa0
+R2
+R0
+R3
+8cnn_serial_core_baseline.v
+Fcnn_serial_core_baseline.v
+L0 7
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8
+vtb
+R1
+!i10b 1
+!s100 nTHIn_FcgHHA6AnKR=CO@2
+I>H<>T7BXN:@;gU2XYak3O2
+R2
+R0
+R3
+8tb_core_equivalence.v
+Ftb_core_equivalence.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8

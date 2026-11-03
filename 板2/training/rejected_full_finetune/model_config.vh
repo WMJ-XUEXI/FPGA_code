@@ -1,0 +1,9 @@
+`define CNN_ACC_BITS 20
+`define CNN_HIDDEN_SIZE 48
+`define CNN_SHIFT_0 5'd7
+`define CNN_SHIFT_1 5'd7
+`define CNN_SHIFT_2 5'd6
+`define CNN_SHIFT_3 5'd4
+`define CNN_WEIGHTS_FILE "E:/Qian_FPGA/example/cnn/sc520_confusion/training/candidate/model/weights.hex"
+`define CNN_BIASES_FILE "E:/Qian_FPGA/example/cnn/sc520_confusion/training/candidate/model/biases.hex"
+`define CNN_FONT_FILE "E:/Qian_FPGA/example/cnn/sc520_confusion/training/candidate/model/font.hex"

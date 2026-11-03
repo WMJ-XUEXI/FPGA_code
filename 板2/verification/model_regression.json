@@ -1,0 +1,6 @@
+{
+  "exported_integer_vectors": 154,
+  "serial_address_vectors": 8,
+  "bit_exact": true,
+  "scope": "integer regression only; no real camera accuracy claim"
+}

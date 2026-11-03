@@ -1,0 +1,137 @@
+{
+  "before": {
+    "all_accuracy": 0.9611471861471862,
+    "accepted_accuracy": 0.9845787504252183,
+    "accepted_fraction": 0.9544372294372294,
+    "classes": {
+      "京": {
+        "correct": 440,
+        "total": 480,
+        "accepted": 431,
+        "accepted_correct": 415
+      },
+      "琼": {
+        "correct": 461,
+        "total": 480,
+        "accepted": 446,
+        "accepted_correct": 443
+      },
+      "Q": {
+        "correct": 466,
+        "total": 480,
+        "accepted": 473,
+        "accepted_correct": 462
+      },
+      "6": {
+        "correct": 480,
+        "total": 480,
+        "accepted": 479,
+        "accepted_correct": 479
+      },
+      "浙": {
+        "correct": 112,
+        "total": 120,
+        "accepted": 110,
+        "accepted_correct": 106
+      },
+      "渝": {
+        "correct": 103,
+        "total": 120,
+        "accepted": 104,
+        "accepted_correct": 95
+      },
+      "G": {
+        "correct": 119,
+        "total": 120,
+        "accepted": 119,
+        "accepted_correct": 119
+      }
+    },
+    "pairs": {
+      "京->琼": {
+        "raw_errors": 3,
+        "accepted_errors": 1
+      },
+      "琼->京": {
+        "raw_errors": 1,
+        "accepted_errors": 1
+      },
+      "Q->6": {
+        "raw_errors": 0,
+        "accepted_errors": 0
+      },
+      "6->Q": {
+        "raw_errors": 0,
+        "accepted_errors": 0
+      }
+    }
+  },
+  "after": {
+    "all_accuracy": 0.9611471861471862,
+    "accepted_accuracy": 0.9858750574184658,
+    "accepted_fraction": 0.9424242424242424,
+    "classes": {
+      "京": {
+        "correct": 440,
+        "total": 480,
+        "accepted": 396,
+        "accepted_correct": 381
+      },
+      "琼": {
+        "correct": 461,
+        "total": 480,
+        "accepted": 407,
+        "accepted_correct": 404
+      },
+      "Q": {
+        "correct": 466,
+        "total": 480,
+        "accepted": 462,
+        "accepted_correct": 451
+      },
+      "6": {
+        "correct": 480,
+        "total": 480,
+        "accepted": 472,
+        "accepted_correct": 472
+      },
+      "浙": {
+        "correct": 112,
+        "total": 120,
+        "accepted": 110,
+        "accepted_correct": 106
+      },
+      "渝": {
+        "correct": 103,
+        "total": 120,
+        "accepted": 103,
+        "accepted_correct": 95
+      },
+      "G": {
+        "correct": 119,
+        "total": 120,
+        "accepted": 119,
+        "accepted_correct": 119
+      }
+    },
+    "pairs": {
+      "京->琼": {
+        "raw_errors": 3,
+        "accepted_errors": 0
+      },
+      "琼->京": {
+        "raw_errors": 1,
+        "accepted_errors": 1
+      },
+      "Q->6": {
+        "raw_errors": 0,
+        "accepted_errors": 0
+      },
+      "6->Q": {
+        "raw_errors": 0,
+        "accepted_errors": 0
+      }
+    }
+  },
+  "scope": "Fixed synthetic development verification seed 470921, evaluated after training trials; this release keeps original weights and only changes confidence acceptance. Not real-camera accuracy; Q->6 not reproduced in this set."
+}

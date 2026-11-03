@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "timeline_pixels": 37440,
+  "camera_pipeline_pixels": 24960,
+  "scope": "independent semantic record/count/time/status/statistics pixel references for actual RAM and actual camera-frame locator/CNN pipeline"
+}

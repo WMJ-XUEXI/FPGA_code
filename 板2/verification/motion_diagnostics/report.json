@@ -1,0 +1,148 @@
+{
+  "scope": "CPU replay of manually cropped display photographs with synthetic roll/blur, development diagnostics only, NOT actual moving-camera accuracy",
+  "cases": [
+    {
+      "case": "jing_roll-3_blur0",
+      "expected": "京AF0236",
+      "prediction": "",
+      "segments": 6,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "jing_roll-3_blur0.6",
+      "expected": "京AF0236",
+      "prediction": "",
+      "segments": 6,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "jing_roll0_blur0",
+      "expected": "京AF0236",
+      "prediction": "",
+      "segments": 6,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "jing_roll0_blur0.6",
+      "expected": "京AF0236",
+      "prediction": "",
+      "segments": 6,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "jing_roll3_blur0",
+      "expected": "京AF0236",
+      "prediction": "",
+      "segments": 6,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "jing_roll3_blur0.6",
+      "expected": "京AF0236",
+      "prediction": "",
+      "segments": 5,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "zheQ_roll-3_blur0",
+      "expected": "浙J8178Q",
+      "prediction": "",
+      "segments": 5,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "zheQ_roll-3_blur0.6",
+      "expected": "浙J8178Q",
+      "prediction": "",
+      "segments": 5,
+      "qualified": false,
+      "correct": false,
+      "margins": []
+    },
+    {
+      "case": "zheQ_roll0_blur0",
+      "expected": "浙J8178Q",
+      "prediction": "浙J8178Q",
+      "segments": 7,
+      "qualified": true,
+      "correct": true,
+      "margins": [
+        872,
+        1422,
+        806,
+        811,
+        742,
+        378,
+        669
+      ]
+    },
+    {
+      "case": "zheQ_roll0_blur0.6",
+      "expected": "浙J8178Q",
+      "prediction": "浙J8178Q",
+      "segments": 7,
+      "qualified": true,
+      "correct": true,
+      "margins": [
+        833,
+        1419,
+        744,
+        811,
+        810,
+        377,
+        761
+      ]
+    },
+    {
+      "case": "zheQ_roll3_blur0",
+      "expected": "浙J8178Q",
+      "prediction": "浙J817BQ",
+      "segments": 7,
+      "qualified": false,
+      "correct": false,
+      "margins": [
+        701,
+        1289,
+        761,
+        680,
+        791,
+        148,
+        612
+      ]
+    },
+    {
+      "case": "zheQ_roll3_blur0.6",
+      "expected": "浙J8178Q",
+      "prediction": "浙J8178Q",
+      "segments": 7,
+      "qualified": true,
+      "correct": true,
+      "margins": [
+        664,
+        1294,
+        743,
+        597,
+        694,
+        392,
+        660
+      ]
+    }
+  ],
+  "accepted_correct": 3,
+  "accepted_wrong": 0,
+  "rejected": 9
+}

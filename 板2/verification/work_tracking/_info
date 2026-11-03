@@ -1,0 +1,70 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vblue_plate_locator
+Z1 !s110 1793376283
+!i10b 1
+!s100 FKAZkAOb2g=AU^iN_h5Cc1
+Inez8nkV]bZlD5J7@hbzF?1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1793374821
+Z4 8../rtl/blue_plate_locator.v
+Z5 F../rtl/blue_plate_locator.v
+L0 47
+Z6 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z7 !s108 1793376283.315000
+Z8 !s107 tb_tracking.v|../rtl/blue_plate_locator.v|
+Z9 !s90 -work|work_tracking|../rtl/blue_plate_locator.v|tb_tracking.v|
+!i113 1
+Z10 o-work work_tracking
+vblueplate_features
+R1
+!i10b 1
+!s100 a;cLVh6zj`gBUB^LBXmJ70
+IML_FO?R=Xf>[U:l8NOB:D3
+R2
+R0
+R3
+R4
+R5
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vtb
+R1
+!i10b 1
+!s100 ^_o5M=E210OV7D7<g:_=L3
+Ii;N7>S^izQHHmmzW_h>Bf3
+R2
+R0
+R3
+8tb_tracking.v
+Ftb_tracking.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

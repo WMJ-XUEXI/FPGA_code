@@ -1,0 +1,190 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vblueplate_video_mixer
+Z1 !s110 1793376280
+!i10b 1
+!s100 IK@XJ^VIV6G6m:QBWG>m<3
+IIX330CL=<05blCz3Hggke1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1793374821
+Z4 8../rtl/blueplate_video_mixer.v
+Z5 F../rtl/blueplate_video_mixer.v
+L0 1
+Z6 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z7 !s108 1793376280.249000
+Z8 !s107 tb_keys.v|../rtl/blueplate_video_mixer.v|../rtl/plate_totals.v|../rtl/calendar_clock.v|../rtl/parking_records.v|
+Z9 !s90 -work|work_keys|../rtl/parking_records.v|../rtl/calendar_clock.v|../rtl/plate_totals.v|../rtl/blueplate_video_mixer.v|tb_keys.v|
+!i113 1
+Z10 o-work work_keys
+vcalendar_clock
+R1
+!i10b 1
+!s100 349oEK6;mC;[bzzfBYH?W3
+I`STL<dIl=FOPmh5?5NVA`0
+R2
+R0
+R3
+8../rtl/calendar_clock.v
+F../rtl/calendar_clock.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vlocator_keys
+R1
+!i10b 1
+!s100 [Zob;e8NK>8VTMPFj:PR`3
+I>S^:ac7G1Zb1NRkC_;eoC3
+R2
+R0
+R3
+R4
+R5
+L0 106
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vpanel_controls
+R1
+!i10b 1
+!s100 46z]K7JGB;CamMV5<FUUo1
+I2JD=0^j=AOA7U@n_<7^g`1
+R2
+R0
+R3
+Z11 8../rtl/parking_records.v
+Z12 F../rtl/parking_records.v
+L0 127
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vparking_controls
+R1
+!i10b 1
+!s100 ?OMP>1k3^BPO@A`h^zAXH2
+I6K?ZQf93TH<QmOcE7H;aP2
+R2
+R0
+R3
+R11
+R12
+L0 101
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vparking_records
+R1
+!i10b 1
+!s100 cHjdmoeNPAGijYne2d3IS3
+I2n4DK@];PE3ESlAF]^HE^1
+R2
+R0
+R3
+R11
+R12
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vplate_presence_guard
+R1
+!i10b 1
+!s100 ]Nig_DP^]cljIgi3]PiPP2
+I[^bmL=SDC<L_J2AE0l?Fa1
+R2
+R0
+R3
+R11
+R12
+L0 155
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vplate_totals
+R1
+!i10b 1
+!s100 LM@E^2?J2?aL4PZ`Z8F@`3
+Im[eG4lL:J1^ZhTP08Ah^k0
+R2
+R0
+R3
+8../rtl/plate_totals.v
+F../rtl/plate_totals.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vtb
+R1
+!i10b 1
+!s100 JR>g^W_N@VRV00d6AMMQO0
+Im<03L[=::lLYU:YZV]8G;0
+R2
+R0
+R3
+8tb_keys.v
+Ftb_keys.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

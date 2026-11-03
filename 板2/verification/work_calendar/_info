@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vcalendar_clock
+Z1 !s110 1793376281
+!i10b 1
+!s100 349oEK6;mC;[bzzfBYH?W3
+IdfE:[7ZkbI5ODGTW5kkZF1
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1793374821
+8../rtl/calendar_clock.v
+F../rtl/calendar_clock.v
+L0 2
+Z4 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z5 !s108 1793376281.233000
+Z6 !s107 tb_calendar.v|../rtl/calendar_clock.v|
+Z7 !s90 -work|work_calendar|../rtl/calendar_clock.v|tb_calendar.v|
+!i113 1
+Z8 o-work work_calendar
+vtb
+R1
+!i10b 1
+!s100 gW^D=SOdWa1CD3g:Y?6<E0
+IDU=QknEBlfJcKg;[J@_671
+R2
+R0
+R3
+8tb_calendar.v
+Ftb_calendar.v
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+R6
+R7
+!i113 1
+R8

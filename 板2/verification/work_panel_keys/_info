@@ -1,0 +1,110 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/Qian_FPGA/example/cnn/sc520_confusion/verification
+vpanel_controls
+Z1 !s110 1793376274
+!i10b 1
+!s100 46z]K7JGB;CamMV5<FUUo1
+ICPb_zQ;WWJTk>UUbTX`NB2
+Z2 V`JN@9S9cnhjKRR_L]QIcM3
+R0
+Z3 w1793374821
+Z4 8../rtl/parking_records.v
+Z5 F../rtl/parking_records.v
+L0 127
+Z6 OV;L;10.3c;59
+r1
+!s85 0
+31
+Z7 !s108 1793376274.806000
+Z8 !s107 tb_panel_keys.v|../rtl/parking_records.v|
+Z9 !s90 -work|work_panel_keys|../rtl/parking_records.v|tb_panel_keys.v|
+!i113 1
+Z10 o-work work_panel_keys
+vparking_controls
+R1
+!i10b 1
+!s100 ?OMP>1k3^BPO@A`h^zAXH2
+I0IG>@JAVL1><HiT7<N:Xe1
+R2
+R0
+R3
+R4
+R5
+L0 101
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vparking_records
+R1
+!i10b 1
+!s100 cHjdmoeNPAGijYne2d3IS3
+IUf1[UScX8iW_zOWSWKiId2
+R2
+R0
+R3
+R4
+R5
+L0 3
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vplate_presence_guard
+R1
+!i10b 1
+!s100 ]Nig_DP^]cljIgi3]PiPP2
+I^TYN`?N9NEM9W^KB82nXT1
+R2
+R0
+R3
+R4
+R5
+L0 155
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vtb
+R1
+!i10b 1
+!s100 >hI<2dKC]Yg50cPTTLT`L0
+IJV>kEN6GUeY9VJ8Z65gaD0
+R2
+R0
+R3
+8tb_panel_keys.v
+Ftb_panel_keys.v
+L0 2
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

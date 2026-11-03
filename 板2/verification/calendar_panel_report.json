@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "independent_pixels": 303296,
+  "timestamp_rows": 3,
+  "retained_views": 2,
+  "hidden_video_passthrough": true,
+  "checks": [
+    "current year/month/day/time",
+    "per-visit IN/OUT timestamps across midnight",
+    "third appearance appended",
+    "compact duration columns",
+    "no unused background above panel",
+    "hidden underlying video"
+  ]
+}

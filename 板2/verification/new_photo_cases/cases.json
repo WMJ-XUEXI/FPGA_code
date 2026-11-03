@@ -1,0 +1,125 @@
+[
+  {
+    "name": "chuan",
+    "expected": "川A869U1",
+    "prediction": "川A869U1",
+    "segments": 7,
+    "qualified": true,
+    "correct": true,
+    "margins": [
+      1045,
+      928,
+      767,
+      534,
+      914,
+      887,
+      873
+    ],
+    "rectification": {
+      "pair": [
+        0,
+        2
+      ],
+      "top_delta": -2,
+      "bottom_delta": 0,
+      "reliable": true,
+      "qualified_edges": true,
+      "anchors": [
+        [
+          6,
+          56
+        ],
+        [
+          5,
+          56
+        ],
+        [
+          4,
+          56
+        ]
+      ]
+    }
+  },
+  {
+    "name": "jingL",
+    "expected": "京L75563",
+    "prediction": "京L75563",
+    "segments": 7,
+    "qualified": true,
+    "correct": true,
+    "margins": [
+      1080,
+      180,
+      476,
+      961,
+      891,
+      876,
+      330
+    ],
+    "rectification": {
+      "pair": [
+        0,
+        2
+      ],
+      "top_delta": 0,
+      "bottom_delta": 0,
+      "reliable": true,
+      "qualified_edges": true,
+      "anchors": [
+        [
+          4,
+          58
+        ],
+        [
+          4,
+          58
+        ],
+        [
+          4,
+          58
+        ]
+      ]
+    }
+  },
+  {
+    "name": "jingA",
+    "expected": "京AF0236",
+    "prediction": "京AF0236",
+    "segments": 7,
+    "qualified": true,
+    "correct": true,
+    "margins": [
+      540,
+      458,
+      776,
+      476,
+      880,
+      337,
+      680
+    ],
+    "rectification": {
+      "pair": [
+        0,
+        2
+      ],
+      "top_delta": 0,
+      "bottom_delta": -2,
+      "reliable": true,
+      "qualified_edges": true,
+      "anchors": [
+        [
+          5,
+          59
+        ],
+        [
+          5,
+          58
+        ],
+        [
+          5,
+          57
+        ]
+      ]
+    }
+  }
+]

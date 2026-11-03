@@ -1,0 +1,326 @@
+{
+  "build": {
+    "camera": "SC520CS",
+    "IDs": [
+      "EE4B",
+      "9E4B"
+    ],
+    "mode": "dynamic_roi_cnn",
+    "setup_WNS_ns": 0.108,
+    "hold_WNS_ns": 0.02,
+    "resources": {
+      "slice": {
+        "used": 19041,
+        "total": 21216
+      },
+      "eram": {
+        "used": 80,
+        "total": 108
+      },
+      "dsp": {
+        "used": 10,
+        "total": 40
+      }
+    },
+    "bit_sha256": "f757176ba76e6be5d4687653438c0511c72b5467c8c40ac270550cc03ed26ea4",
+    "board_test": "not performed",
+    "detection_accuracy": "not measured on camera"
+  },
+  "tests": {
+    "all_passed": true,
+    "RTL_tests": [
+      "character_confidence.log",
+      "core_equivalence.log",
+      "panel_keys.log",
+      "presence_stability.log",
+      "locator_background.log",
+      "calendar.log",
+      "timestamps.log",
+      "calendar_integration.log",
+      "panels.log",
+      "scan_gate.log",
+      "tracking.log",
+      "timeline.log",
+      "keys.log",
+      "parking.log",
+      "confirmation.log",
+      "osd.log",
+      "video_verified.log"
+    ],
+    "camera_and_model_unchanged": true,
+    "core_optimisation": "1024-entry A bank, inactive-bank reads disabled; baseline and integer-logit equivalence tested",
+    "province_margin_threshold": 128,
+    "target_class_thresholds": {
+      "jing_qiong": 256,
+      "Q_6_B_8": 192
+    },
+    "ethernet_added": false,
+    "history_policy": "one row per parking visit, append on re-entry; only active row closes on exit",
+    "daily_policy": "FPGA calendar with UART calibration; midnight and date calibration reset daily flow, preserving occupancy and records; no battery retention",
+    "flow_definition": "accepted IN + OUT events, not distinct vehicles",
+    "daily_counter_max": 9999,
+    "records": 32,
+    "rows_per_page": 8,
+    "pages": 4,
+    "entry_confirmation": "4 matching qualified whole-plate observations in last 5 attempts",
+    "departure": "30 consecutive HDMI frames without measured plate or local plate-text presence; OCR-quality loss alone does not rearm",
+    "identity_policy": "continuous verification; new whole-plate consensus switches identity without empty frames",
+    "timer": "first appearance IN/start; second appearance OUT/stop; third IN/new interval; seconds resolution, maximum 99:59:59",
+    "per_plate_appearance_counter": false,
+    "auto_page": "follow newly inserted record at next frame boundary",
+    "clear": "hold KEY3 for two seconds; visible plate not immediately re-added",
+    "development_video_confirmation_clocks": 6519807,
+    "development_video_confirmation_ms_at_75MHz": 86.93076,
+    "board_test": "not performed",
+    "accuracy": "CNN/model unchanged from sc520_calendar; localisation/presence regression scenes only; real camera accuracy unmeasured",
+    "confusion_filter_validation": {
+      "before": {
+        "all_accuracy": 0.9611471861471862,
+        "accepted_accuracy": 0.9845787504252183,
+        "accepted_fraction": 0.9544372294372294,
+        "classes": {
+          "京": {
+            "correct": 440,
+            "total": 480,
+            "accepted": 431,
+            "accepted_correct": 415
+          },
+          "琼": {
+            "correct": 461,
+            "total": 480,
+            "accepted": 446,
+            "accepted_correct": 443
+          },
+          "Q": {
+            "correct": 466,
+            "total": 480,
+            "accepted": 473,
+            "accepted_correct": 462
+          },
+          "6": {
+            "correct": 480,
+            "total": 480,
+            "accepted": 479,
+            "accepted_correct": 479
+          },
+          "浙": {
+            "correct": 112,
+            "total": 120,
+            "accepted": 110,
+            "accepted_correct": 106
+          },
+          "渝": {
+            "correct": 103,
+            "total": 120,
+            "accepted": 104,
+            "accepted_correct": 95
+          },
+          "G": {
+            "correct": 119,
+            "total": 120,
+            "accepted": 119,
+            "accepted_correct": 119
+          }
+        },
+        "pairs": {
+          "京->琼": {
+            "raw_errors": 3,
+            "accepted_errors": 1
+          },
+          "琼->京": {
+            "raw_errors": 1,
+            "accepted_errors": 1
+          },
+          "Q->6": {
+            "raw_errors": 0,
+            "accepted_errors": 0
+          },
+          "6->Q": {
+            "raw_errors": 0,
+            "accepted_errors": 0
+          }
+        }
+      },
+      "after": {
+        "all_accuracy": 0.9611471861471862,
+        "accepted_accuracy": 0.9858750574184658,
+        "accepted_fraction": 0.9424242424242424,
+        "classes": {
+          "京": {
+            "correct": 440,
+            "total": 480,
+            "accepted": 396,
+            "accepted_correct": 381
+          },
+          "琼": {
+            "correct": 461,
+            "total": 480,
+            "accepted": 407,
+            "accepted_correct": 404
+          },
+          "Q": {
+            "correct": 466,
+            "total": 480,
+            "accepted": 462,
+            "accepted_correct": 451
+          },
+          "6": {
+            "correct": 480,
+            "total": 480,
+            "accepted": 472,
+            "accepted_correct": 472
+          },
+          "浙": {
+            "correct": 112,
+            "total": 120,
+            "accepted": 110,
+            "accepted_correct": 106
+          },
+          "渝": {
+            "correct": 103,
+            "total": 120,
+            "accepted": 103,
+            "accepted_correct": 95
+          },
+          "G": {
+            "correct": 119,
+            "total": 120,
+            "accepted": 119,
+            "accepted_correct": 119
+          }
+        },
+        "pairs": {
+          "京->琼": {
+            "raw_errors": 3,
+            "accepted_errors": 0
+          },
+          "琼->京": {
+            "raw_errors": 1,
+            "accepted_errors": 1
+          },
+          "Q->6": {
+            "raw_errors": 0,
+            "accepted_errors": 0
+          },
+          "6->Q": {
+            "raw_errors": 0,
+            "accepted_errors": 0
+          }
+        }
+      },
+      "scope": "Fixed synthetic development verification seed 470921, evaluated after training trials; this release keeps original weights and only changes confidence acceptance. Not real-camera accuracy; Q->6 not reproduced in this set."
+    },
+    "calendar_panel_verification": {
+      "passed": true,
+      "independent_pixels": 303296,
+      "timestamp_rows": 3,
+      "retained_views": 2,
+      "hidden_video_passthrough": true,
+      "checks": [
+        "current year/month/day/time",
+        "per-visit IN/OUT timestamps across midnight",
+        "third appearance appended",
+        "compact duration columns",
+        "no unused background above panel",
+        "hidden underlying video"
+      ]
+    },
+    "calendar_protocol": "115200 8N1, TYYYYMMDDhhmmss LF, K success/E invalid; unknown time before calibration",
+    "panel_views": [
+      "compact per-visit duration",
+      "compact per-visit IN/OUT date/time"
+    ],
+    "table_pixel_verification": {
+      "passed": true,
+      "timeline_pixels": 37440,
+      "camera_pipeline_pixels": 24960,
+      "scope": "independent semantic record/count/time/status/statistics pixel references for actual RAM and actual camera-frame locator/CNN pipeline"
+    },
+    "actual_video_record_verification": {
+      "passed": true,
+      "timeline_pixels": 37440,
+      "camera_pipeline_pixels": 24960,
+      "scope": "independent semantic record/count/time/status/statistics pixel references for actual RAM and actual camera-frame locator/CNN pipeline"
+    },
+    "model_sha256": {
+      "biases.hex": "b34e71184ef127c5447dd312cc5d86ccfa73ab09cb0a115644e0b0bbf1c59e91",
+      "classes.json": "62d7725e2ace862c75fb3f0675805559a31e0802cb23c3e1d7a63e6d4b96570e",
+      "font.hex": "2e86606b99b262abd84cdbf66d03ac7bc4ad0434b8f9858d95d9805013816af3",
+      "model_report.json": "812c72724376815b8e2e36c9860f0b1f7ea35cfd23d53f404c0cb8690b0036ef",
+      "osd_font.hex": "2750a078de3cbf7f1bcca83273f804cc255c2a06fe4c7e889d0419e385e54ea2",
+      "tiny_plate.pth": "b61615fb97ce7640e04273268b9d9525ade12ba275e3883db32732fe9d5457fc",
+      "weights.hex": "4dff72b79b9ed4121646962b9bab0236ef03be7424c0bad206e2a3f5d12546a3"
+    },
+    "RTL_sha256": {
+      "blueplate_video_mixer.v": "40d279c2e83f2d439ec87841488e829fa8dfc206e20f871b84df3ef1d510c574",
+      "blue_plate_locator.v": "918c689058ab3764ff58dbc0feaa607b45be20379d19b3cbf911c3f9c6465bbe",
+      "calendar_clock.v": "3e2462de86e895229ac0926d899ee2f1f336ee3155dde8e71b1d635654cdd18a",
+      "cnn_serial_core.v": "d485cb84743b7819f015a3b4729b0e8dea04ec80f77c386a9c6d0b5c6b7da0d4",
+      "model_config.vh": "1af8f0df0a32c76416f8fcdaef5f045952a7873d9a954313b4c3a54cbfded1f7",
+      "parking_records.v": "90f6d928cd24a76a64335e89a6d1bf4d384a6b35b82f063cd633c732045e11d4",
+      "plate_capture.v": "39c1b3bb8f4c5d504fb0b7a1b1ca45d83d09d3f617b06a6ba2410fb92f061e3b",
+      "plate_confirmation.v": "d1227cb1580001a9801abb6727ea931983715cb677f9951a0f58c257cf495f02",
+      "plate_totals.v": "2bb6d620b31d2ae98f662aeeec7e7eeb0868e69c8138385a4a8e5adfc2d9a058",
+      "recognition_osd.v": "a5d24465f016d52054c85a691cbf62e0c913b7c72942a8e647afb8f791e9092a"
+    }
+  },
+  "model_training": {
+    "scope": "synthetic printed glyphs, held-out font FILES and random seed; not real camera accuracy",
+    "before": {
+      "character_accuracy": 0.962051272392273,
+      "accepted_accuracy_margin32": 0.9686203598976135,
+      "accepted_fraction": 0.9887179732322693,
+      "province_accuracy": 0.925268828868866,
+      "chuan_accuracy": 0.9833333492279053,
+      "yu_accuracy": 0.8333333134651184,
+      "zhe_accuracy": 0.9166666865348816,
+      "G_accuracy": 0.9833333492279053,
+      "six_accuracy": 1.0
+    },
+    "after": {
+      "character_accuracy": 0.9653846025466919,
+      "accepted_accuracy_margin32": 0.9714656472206116,
+      "accepted_fraction": 0.9884615540504456,
+      "province_accuracy": 0.9327957034111023,
+      "chuan_accuracy": 0.9833333492279053,
+      "yu_accuracy": 0.8333333134651184,
+      "zhe_accuracy": 0.9333333373069763,
+      "G_accuracy": 1.0,
+      "six_accuracy": 1.0
+    },
+    "best_epoch": 10,
+    "train_samples": 33000,
+    "validation_samples": 4020,
+    "train_fonts_CN": [
+      "simhei.ttf",
+      "simsun.ttc",
+      "msyh.ttc",
+      "simfang.ttf"
+    ],
+    "train_fonts_EN": [
+      "arialbd.ttf",
+      "ARIALN.TTF",
+      "bahnschrift.ttf",
+      "simhei.ttf",
+      "msyh.ttc"
+    ],
+    "validation_fonts_CN": [
+      "simkai.ttf",
+      "msyhbd.ttc"
+    ],
+    "validation_fonts_EN": [
+      "arial.ttf",
+      "ARIALNB.TTF",
+      "msyhbd.ttc"
+    ],
+    "photographed_development_samples_in_training": 0,
+    "network_dimensions_unchanged": true,
+    "hidden_units": 48,
+    "epochs": 12,
+    "elapsed_seconds": 58.04156994819641
+  },
+  "native_GUI_verified": true,
+  "source_hashes_verified": 217,
+  "backup": "E:/Qian_FPGA/example/cnn/backups/sc520_efficient_before_confusion_20261030_234020.zip",
+  "board_test": "not performed"
+}

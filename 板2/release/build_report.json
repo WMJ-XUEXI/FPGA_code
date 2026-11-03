@@ -1,0 +1,27 @@
+{
+  "camera": "SC520CS",
+  "IDs": [
+    "EE4B",
+    "9E4B"
+  ],
+  "mode": "dynamic_roi_cnn",
+  "setup_WNS_ns": 0.108,
+  "hold_WNS_ns": 0.02,
+  "resources": {
+    "slice": {
+      "used": 19041,
+      "total": 21216
+    },
+    "eram": {
+      "used": 80,
+      "total": 108
+    },
+    "dsp": {
+      "used": 10,
+      "total": 40
+    }
+  },
+  "bit_sha256": "f757176ba76e6be5d4687653438c0511c72b5467c8c40ac270550cc03ed26ea4",
+  "board_test": "not performed",
+  "detection_accuracy": "not measured on camera"
+}
